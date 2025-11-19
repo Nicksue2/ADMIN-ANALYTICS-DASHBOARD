@@ -1,0 +1,225 @@
+/* ----- VARIABLES ----- */
+:root {
+    --primary-gradient: linear-gradient(135deg, #4e73df 0%, #224abe 100%);
+    --bg-color: #f8f9fc;
+    --card-bg: #ffffff;
+    --text-main: #333;
+    --text-muted: #6c757d;
+    --border-color: #e3e6f0;
+    --input-bg: #f1f3f9;
+    --modal-bg: #ffffff;
+}
+
+[data-theme="dark"] {
+    --primary-gradient: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+    --bg-color: #121212;
+    --card-bg: #1e1e1e;
+    --text-main: #e0e0e0;
+    --text-muted: #b0b3b8;
+    --border-color: #333;
+    --input-bg: #2d3748;
+    --modal-bg: #1e1e1e;
+}
+
+/* ----- BASE STYLES ----- */
+body {
+    background-color: var(--bg-color);
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-main);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+::selection {
+    background: #4e73df;
+    color: #fff;
+}
+
+.text-muted {
+    color: var(--text-muted) !important;
+}
+
+/* ----- HEADER SECTION ----- */
+.hero-header {
+    background: var(--primary-gradient);
+    height: 320px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    position: relative;
+    z-index: 0;
+}
+
+.hero-header .form-check-input {
+    background-color: rgba(255,255,255,0.2);
+    border: none;
+    cursor: pointer;
+    width: 3em; 
+    height: 1.5em;
+}
+
+#totalSalesDisplay {
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: inline-block;
+}
+
+#totalSalesDisplay:hover {
+    color: #f6c23e;
+    transform: scale(1.1);
+    text-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+#totalSalesDisplay:active {
+    transform: scale(0.9) rotate(-3deg);
+}
+
+/* ----- LAYOUT & CARDS ----- */
+.content-overlap {
+    margin-top: -80px;
+    position: relative;
+    z-index: 1;
+}
+
+.card {
+    background-color: var(--card-bg);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 15px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+}
+
+/* ----- TABLE STYLING ----- */
+.table {
+    --bs-table-bg: transparent;
+    --bs-table-hover-bg: rgba(128, 128, 128, 0.1);
+    color: var(--text-main);
+    margin-bottom: 0;
+}
+
+.table td, .table th {
+    background-color: transparent !important;
+    color: var(--text-main);
+    border-bottom: 1px solid var(--border-color);
+    vertical-align: middle;
+    padding: 15px;
+}
+
+.table-header-custom th {
+    background-color: var(--input-bg) !important;
+    border-bottom: 2px solid var(--border-color);
+}
+
+/* Table Actions */
+.table .btn-light.text-warning {
+    background-color: transparent;
+    border: 1px solid #ffc107;
+    color: #ffc107 !important;
+    transition: all 0.3s ease;
+}
+
+.table .btn-light.text-warning:hover {
+    background-color: #ffc107;
+    color: #000 !important;
+    transform: scale(1.2);
+    transform: rotate(-12deg);
+    box-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+}
+
+.table .btn-light.text-danger {
+    background-color: transparent;
+    border: 1px solid #dc3545;
+    color: #dc3545 !important;
+    transition: all 0.3s ease;
+}
+
+.table .btn-light.text-danger:hover {
+    background-color: #dc3545;
+    color: #fff !important;
+    transform: rotate(15deg);
+    box-shadow: 0 0 10px rgba(220, 53, 69, 0.5);
+}
+
+/* ----- INPUTS & BUTTONS ----- */
+.form-control, .form-select {
+    background-color: var(--input-bg) !important;
+    border: 1px solid transparent;
+    color: var(--text-main) !important;
+}
+
+.form-control:focus, .form-select:focus {
+    background-color: var(--input-bg) !important;
+    color: var(--text-main) !important;
+    border-color: #4e73df;
+    box-shadow: none;
+}
+
+/* Search Field Customization */
+#searchInput {
+    background-color: var(--input-bg);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+#searchInput:focus {
+    background-color: var(--input-bg);
+    color: var(--text-main);
+    border-color: #4e73df;
+    box-shadow: 0 0 15px rgba(78, 115, 223, 0.3);
+    transform: scale(1.05);
+}
+
+::placeholder { 
+    color: var(--text-muted) !important; 
+    opacity: 0.7;
+    text-align: center;
+}
+
+/* Export Button */
+.btn-excel {
+    background-color: #1D6F42;
+    color: white;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-excel:hover {
+    background-color: #155b34;
+    color: white;
+    transform: scale(1.05) rotate(-3deg);
+    box-shadow: 0 5px 15px rgba(29, 111, 66, 0.4);
+}
+
+/* ----- MODALS ----- */
+.modal-content {
+    background-color: var(--modal-bg) !important;
+    color: var(--text-main);
+}
+
+.modal-header {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.btn-close { 
+    filter: invert(var(--invert-value)); 
+}
+
+[data-theme="dark"] .btn-close { 
+    filter: invert(1) grayscale(100%) brightness(200%); 
+}
+
+/* ----- UTILITIES ----- */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-color); }
+::-webkit-scrollbar-thumb { background: #cbd5e0; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #a0aec0; }
+
+.fade-in { animation: fadeIn 0.8s ease-out; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
